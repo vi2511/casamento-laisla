@@ -1,0 +1,337 @@
+/* Fundo texturizado em estilo outono */
+.autumn-background {
+  background: url("https://www.transparenttextures.com/patterns/old-wall.png"),
+    linear-gradient(#f2e8cf, #e8d9c5);
+  background-size: auto;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+  font-family: "Playfair Display", serif;
+}
+
+/* Animação de fade-in da página */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Moldura clássica */
+.classic-frame {
+  width: 260px;
+  max-width: 100%;
+  height: 300px;
+  padding: 12px;
+  margin: 0 auto 20px auto;
+  border: 10px solid #a07855;
+  border-image: url("https://i.imgur.com/H8XQySS.png") 30 stretch;
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Folhas decorativas animadas */
+.falling-leaf {
+  position: fixed;
+  top: -40px;
+  width: 40px;
+  opacity: 0.7;
+  animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-40px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
+
+/* Typography & Layout */
+.couple-name {
+  font-size: 64px;
+  color: #556B2F;
+  margin-bottom: 10px;
+  font-family: 'Great Vibes', cursive;
+  line-height: 1.2;
+}
+
+.romantic-quote {
+  font-size: 30px;
+  color: #6B4F2A;
+  margin-bottom: 30px;
+  font-family: 'Great Vibes', cursive;
+  padding: 0 10px;
+}
+
+.countdown-card {
+  background: #f7f1e3;
+  padding: 25px 40px;
+  display: inline-block;
+  border-radius: 16px;
+  border: 2px solid #b08968;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.countdown-title {
+  color: #5f5b45;
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+}
+
+.countdown-timer {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a4633;
+  font-family: 'Playfair Display', serif;
+}
+
+.rsvp-button {
+  background: #556B2F !important;
+  border-color: #556B2F !important;
+  color: white !important;
+  font-size: 20px !important;
+  padding: 0 30px !important;
+  height: 50px !important;
+  border-radius: 12px !important;
+  font-family: 'Playfair Display', serif !important;
+  white-space: normal !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* RSVP Page Styles */
+.rsvp-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(85, 107, 47, 0.2);
+  border: 1px solid #e8d9c5;
+}
+
+.rsvp-title {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: #556B2F;
+  margin-bottom: 10px;
+}
+
+.rsvp-description {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #6B4F2A;
+  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+}
+
+.form-label {
+  font-family: 'Playfair Display', serif;
+  color: #4a4633;
+}
+
+.form-icon {
+  color: #b08968;
+}
+
+.submit-button {
+  background: #556B2F !important;
+  border-color: #556B2F !important;
+  font-family: 'Playfair Display', serif !important;
+  height: 50px !important;
+  font-size: 18px !important;
+  margin-top: 10px !important;
+}
+
+/* General Page Styles */
+.page-section {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: #556B2F;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page-subtitle {
+  font-size: 18px;
+  color: #4a4633;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.info-list {
+  line-height: 32px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #4a4633;
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+/* Our Story Styles */
+.story-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.story-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.story-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.story-image-container {
+  flex: 1;
+  max-width: 400px;
+}
+
+.story-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 5px solid #fff;
+}
+
+.story-content {
+  flex: 1;
+  text-align: left;
+}
+
+.story-date {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  color: #b08968;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.story-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #556B2F;
+  margin-bottom: 15px;
+}
+
+.story-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #4a4633;
+  line-height: 1.6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .autumn-background {
+    padding: 20px 10px;
+  }
+
+  .couple-name {
+    font-size: 42px;
+  }
+
+  .classic-frame {
+    width: 220px;
+    height: 260px;
+  }
+
+  .romantic-quote {
+    font-size: 24px;
+  }
+
+  .countdown-card {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .countdown-timer {
+    font-size: 18px;
+  }
+
+  .rsvp-button {
+    font-size: 16px !important;
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+
+  .rsvp-container {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .rsvp-title {
+    font-size: 36px;
+  }
+
+  .rsvp-description {
+    font-size: 16px;
+  }
+
+  .page-section {
+    padding: 20px;
+  }
+
+  .page-title {
+    font-size: 36px;
+  }
+
+  .page-subtitle,
+  .info-list {
+    font-size: 16px;
+  }
+
+  .story-item,
+  .story-item:nth-child(even) {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .story-content {
+    text-align: center;
+  }
+
+  .story-image-container {
+    max-width: 100%;
+  }
+
+  .story-date {
+    font-size: 28px;
+  }
+
+  .story-title {
+    font-size: 24px;
+  }
+
+  .story-text {
+    font-size: 16px;
+  }
+}

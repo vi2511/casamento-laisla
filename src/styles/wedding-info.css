@@ -1,0 +1,256 @@
+/* Wedding Info Page Styles */
+.info-container {
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(85, 107, 47, 0.15);
+    border: 2px solid #e8d9c5;
+    margin-bottom: 40px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid #e8d9c5;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-icon {
+    font-size: 2.5rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #556B2F;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.info-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #4a4633;
+    margin: 0;
+    font-weight: 500;
+}
+
+.info-address {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #6B4F2A;
+    margin: 8px 0 0 0;
+    line-height: 1.6;
+}
+
+/* Map Container */
+.map-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(85, 107, 47, 0.15);
+    border: 2px solid #e8d9c5;
+    margin-bottom: 40px;
+}
+
+.map-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #556B2F;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.map-wrapper {
+    margin-bottom: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-button {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.nav-button.google-maps {
+    background: #4285F4;
+    color: white;
+}
+
+.nav-button.google-maps:hover {
+    background: #357ae8;
+}
+
+.nav-button.waze {
+    background: #33CCFF;
+    color: white;
+}
+
+.nav-button.waze:hover {
+    background: #00B8E6;
+}
+
+.nav-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Additional Info */
+.additional-info {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(85, 107, 47, 0.15);
+    border: 2px solid #e8d9c5;
+}
+
+.additional-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #556B2F;
+    margin: 0 0 25px 0;
+    text-align: center;
+}
+
+.additional-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.additional-list li {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #4a4633;
+    padding: 15px 0;
+    border-bottom: 1px solid #e8d9c5;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.additional-list li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .info-card,
+    .map-container,
+    .additional-info {
+        padding: 25px;
+    }
+
+    .info-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .info-icon {
+        font-size: 2rem;
+    }
+
+    .info-label {
+        font-size: 1.1rem;
+    }
+
+    .info-value {
+        font-size: 1.3rem;
+    }
+
+    .info-address {
+        font-size: 1rem;
+    }
+
+    .map-title,
+    .additional-title {
+        font-size: 1.6rem;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        min-width: 100%;
+        font-size: 1rem;
+    }
+
+    .additional-list li {
+        font-size: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-container {
+        padding: 0 10px;
+    }
+
+    .info-card,
+    .map-container,
+    .additional-info {
+        padding: 20px;
+    }
+
+    .info-icon {
+        font-size: 1.8rem;
+    }
+
+    .map-title,
+    .additional-title {
+        font-size: 1.4rem;
+    }
+
+    .nav-button {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
