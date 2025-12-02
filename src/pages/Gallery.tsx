@@ -1,38 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/gallery.css";
 
-// Imagens do carrossel - você pode substituir por suas próprias fotos
+import img1 from "../assets/photos/galery/1.jfif";
+import img2 from "../assets/photos/galery/2.jpg";
+import img3 from "../assets/photos/galery/3.jpg";
+import img4 from "../assets/photos/galery/4.webp";
+import img5 from "../assets/photos/galery/5.jpg";
+import img6 from "../assets/photos/galery/6.jpg";
+import img7 from "../assets/photos/galery/7.jpg";
+import img8 from "../assets/photos/galery/8.jfif";
+import img9 from "../assets/photos/galery/9.jpg";
+import img10 from "../assets/photos/galery/10.webp";
+import img11 from "../assets/photos/galery/11.webp";
+import img12 from "../assets/photos/galery/12.jfif";
+import img13 from "../assets/photos/galery/13.jpg";
+import img14 from "../assets/photos/galery/14.jfif";
+import img15 from "../assets/photos/galery/15.jfif";
+
+// Imagens do carrossel
 const galleryImages = [
-    {
-        id: 1,
-        url: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80",
-        caption: "Nosso primeiro encontro"
-    },
-    {
-        id: 2,
-        url: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1200&q=80",
-        caption: "Pedido de casamento"
-    },
-    {
-        id: 3,
-        url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&q=80",
-        caption: "Ensaio pré-wedding"
-    },
-    {
-        id: 4,
-        url: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200&q=80",
-        caption: "Momentos especiais"
-    },
-    {
-        id: 5,
-        url: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
-        caption: "Nossa história"
-    },
-    {
-        id: 6,
-        url: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80",
-        caption: "Juntos para sempre"
-    }
+    { id: 1, url: img1 },
+    { id: 2, url: img2 },
+    { id: 3, url: img3 },
+    { id: 4, url: img4 },
+    { id: 5, url: img5 },
+    { id: 6, url: img6 },
+    { id: 7, url: img7 },
+    { id: 8, url: img8 },
+    { id: 9, url: img9 },
+    { id: 10, url: img10, },
+    { id: 11, url: img11, },
+    { id: 12, url: img12, },
+    { id: 13, url: img13, },
+    { id: 14, url: img14, },
+    { id: 15, url: img15, },
 ];
 
 export default function Gallery() {
@@ -53,6 +54,15 @@ export default function Gallery() {
     const goToSlide = (index: number) => {
         setCurrentIndex(index);
     };
+
+    // Autoplay effect
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 5000); // Change slide every 5 seconds
+
+        return () => clearInterval(interval);
+    }, [currentIndex]); // Re-run effect when currentIndex changes to ensure correct state
 
     return (
         <div className="autumn-background">
@@ -83,12 +93,8 @@ export default function Gallery() {
                             >
                                 <img
                                     src={image.url}
-                                    alt={image.caption}
                                     className="carousel-image"
                                 />
-                                <div className="carousel-caption">
-                                    <p>{image.caption}</p>
-                                </div>
                             </div>
                         ))}
                     </div>
@@ -125,9 +131,8 @@ export default function Gallery() {
                             className={`gallery-thumbnail ${index === currentIndex ? 'active' : ''}`}
                             onClick={() => goToSlide(index)}
                         >
-                            <img src={image.url} alt={image.caption} />
+                            <img src={image.url} />
                             <div className="thumbnail-overlay">
-                                <span>{image.caption}</span>
                             </div>
                         </div>
                     ))}

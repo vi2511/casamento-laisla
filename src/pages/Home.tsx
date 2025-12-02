@@ -3,6 +3,8 @@ import { Button } from "antd";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
 
+import homeImg from "../assets/photos/home.jfif";
+
 export default function Home() {
   // === CONTAGEM REGRESSIVA ===
   const weddingDate = new Date("2026-04-04T18:00:00").getTime();
@@ -45,7 +47,7 @@ export default function Home() {
       {/* === MOLDURA CLÁSSICA === */}
       <div className="classic-frame">
         <img
-          src="https://i.imgur.com/N9bQw1x.jpeg" // TROQUE PELA FOTO REAL
+          src={homeImg} // TROQUE PELA FOTO REAL
           alt="casal"
           style={{
             width: "100%",

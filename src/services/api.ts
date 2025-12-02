@@ -1,4 +1,5 @@
 import type { RSVPFormData, ApiResponse, RSVPSubmissionResponse } from '../types';
+import axios from 'axios';
 
 // API Configuration
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
@@ -21,30 +22,31 @@ class ApiService {
    */
   async submitRSVP(data: RSVPFormData): Promise<ApiResponse<RSVPSubmissionResponse>> {
     try {
-      const response = await fetch(`${this.baseUrl}/rsvp`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await axios.post<RSVPSubmissionResponse>(`${this.baseUrl}/rsvp`, data);
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
-      }
-
-      const result = await response.json();
       return {
         success: true,
-        data: result,
+        data: response.data,
         message: 'RSVP submitted successfully',
       };
     } catch (error) {
       console.error('Error submitting RSVP:', error);
+      
+      let errorMessage = 'Failed to submit RSVP';
+      
+      if (axios.isAxiosError(error)) {
+        errorMessage = error.response?.data?.message || error.message;
+        // Handle array of validation errors if present
+        if (Array.isArray(error.response?.data?.message)) {
+            errorMessage = error.response?.data?.message.join(', ');
+        }
+      } else if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+
       return {
         success: false,
-        error: error instanceof Error ? error.message : 'Failed to submit RSVP',
+        error: errorMessage,
       };
     }
   }

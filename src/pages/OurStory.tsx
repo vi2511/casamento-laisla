@@ -1,4 +1,8 @@
 import "../styles/home.css";
+import primeiraImg from "../assets/photos/ourStory/primeira.jfif";
+import tentarImg from "../assets/photos/ourStory/tentar.jfif";
+import pedidoImg from "../assets/photos/ourStory/pedido.jpg";
+import altarImg from "../assets/photos/ourStory/altar.jfif";
 
 export default function OurStory() {
   return (
@@ -12,16 +16,15 @@ export default function OurStory() {
           <div className="story-item">
             <div className="story-image-container">
               <img
-                src="https://via.placeholder.com/400x300?text=O+Encontro"
+                src={primeiraImg}
                 alt="O Encontro"
                 className="story-image"
               />
             </div>
             <div className="story-content">
-              <span className="story-date">Outono de 2018</span>
-              <h2 className="story-title">O Primeiro Olhar</h2>
+              <span className="story-date">O primeiro olhar…</span>
               <p className="story-text">
-                Nos conhecemos em uma tarde ensolarada no parque. Lincoln estava lendo um livro e Vinícius, passeando com seu cachorro, parou para pedir uma informação. A conversa fluiu tão naturalmente que parecia que já nos conhecíamos de outras vidas. Trocamos telefones e, desde aquele dia, não paramos mais de nos falar.
+                …aconteceu do jeito mais moderno possível (para a época, né?): através de uma tela do Orkut. Um simples “Olá!” nas comunidades, e dali engatamos con-versa atrás de conversa. Vieram as mensagens de boas festas, o tempo passou — seis meses voando — e finalmente o esperado: “Vamos nos ver?”. Um sorvete com risos tímidos e, sem perceber, começamos a nos ver toda semana. A internet uniu… o sorvete confirmou!
               </p>
             </div>
           </div>
@@ -30,16 +33,16 @@ export default function OurStory() {
           <div className="story-item">
             <div className="story-image-container">
               <img
-                src="https://via.placeholder.com/400x300?text=Primeira+Viagem"
+                src={tentarImg}
                 alt="Primeira Viagem"
                 className="story-image"
               />
             </div>
             <div className="story-content">
-              <span className="story-date">Inverno de 2019</span>
-              <h2 className="story-title">A Primeira Viagem</h2>
+              <span className="story-date">Vamos tentar?</span>
               <p className="story-text">
-                Nossa primeira viagem juntos foi para as montanhas. Entre trilhas, vinhos e lareiras, percebemos que éramos os melhores companheiros de aventura um do outro. Foi ali, sob um céu estrelado, que dissemos "eu te amo" pela primeira vez.
+                Percebendo que já nos víamos várias vezes por semana - e sempre querendo mais - veio aquela conclusão óbvia: ok, a gente vai namorar mesmo. A partir daí foi um turbilhão bom — viagens, risadas, festas, TCCs, perrengues, alegrias e tudo que vem no pacote. Até que um dia surgiu a frase que mudou o jogo: “Va
+                mos comprar uma casa”.
               </p>
             </div>
           </div>
@@ -48,16 +51,31 @@ export default function OurStory() {
           <div className="story-item">
             <div className="story-image-container">
               <img
-                src="https://via.placeholder.com/400x300?text=O+Pedido"
+                src={pedidoImg}
                 alt="O Pedido"
                 className="story-image"
               />
             </div>
             <div className="story-content">
-              <span className="story-date">Primavera de 2024</span>
-              <h2 className="story-title">O Grande Pedido</h2>
+              <span className="story-date">O pedido</span>
               <p className="story-text">
-                Durante um piquenique surpresa no mesmo parque onde nos conhecemos, Lincoln se ajoelhou. Com as mãos trêmulas e o coração acelerado, ele fez a pergunta que mudaria nossas vidas para sempre. A resposta, claro, foi um emocionado "SIM!".
+                “Vamos almoçar pra comemorar nosso aniversário.” “E a tua promoção.”
+                <br />
+                Dia calmo. Ensolarado. Tudo perfeito: mesa arrumada, comida chegando, con-versa boa:
+                <br />
+                “Bom demais estar de namoro.”
+                <br />
+                “Casados, né? Moramos juntos.”
+                <br />
+                “Não. Não somos casados ainda.”
+                <br />
+                “Ah, nunca ninguém pediu.”
+                <br />
+                Repentinamente… tcharam! Alianças em mãos, coração acelerado:
+                <br />
+                “Então… casa comigo?”
+                <br />
+                O sorriso abriu mais do que o Sol daquele dia — surpresa, alegria, e o tipo de felicidade que a gente nunca esquece.
               </p>
             </div>
           </div>
@@ -66,16 +84,15 @@ export default function OurStory() {
           <div className="story-item">
             <div className="story-image-container">
               <img
-                src="https://via.placeholder.com/400x300?text=O+Futuro"
+                src={altarImg}
                 alt="O Futuro"
                 className="story-image"
               />
             </div>
             <div className="story-content">
-              <span className="story-date">O Futuro</span>
-              <h2 className="story-title">Rumo ao Altar</h2>
+              <span className="story-date">Rumo ao Altar</span>
               <p className="story-text">
-                Agora, estamos contando os dias para celebrar nosso amor com as pessoas mais importantes de nossas vidas. Mal podemos esperar para escrever os próximos capítulos dessa história ao lado de vocês.
+                Agora na contagem regressiva — e, sinceramente, já surtando um pouquinho de ansiedade e empolgação! Vai ser muito especial celebrar nosso amor com as pessoas que fazem parte da nossa vida de verdade. Mal podemos esperar para viver esse dia incrível e continuar escrevendo essa história com vocês por perto. Porque, né… tudo fica mais divertido quando a gente está bem acompanhado!
               </p>
             </div>
           </div>
