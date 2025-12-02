@@ -22,7 +22,11 @@ class ApiService {
    */
   async submitRSVP(data: RSVPFormData): Promise<ApiResponse<RSVPSubmissionResponse>> {
     try {
-      const response = await axios.post<RSVPSubmissionResponse>(`${this.baseUrl}/rsvp`, data);
+      const response = await axios.post<RSVPSubmissionResponse>(`${this.baseUrl}/rsvp`, data, {
+        headers: {
+          'x-api-key': import.meta.env.VITE_API_KEY
+        }
+      });
 
       return {
         success: true,

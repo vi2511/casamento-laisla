@@ -10,7 +10,7 @@ export default function WeddingInfo() {
   // Links para navegação
   const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${addressEncoded}`;
   const wazeLink = `https://www.waze.com/ul?q=${addressEncoded}&navigate=yes`;
-  const apiKey = 'AIzaSyC4v6fxEHyKnyWKzMhJA3_DOyc_mUkgp-0'
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   return (
     <div className="autumn-background">
