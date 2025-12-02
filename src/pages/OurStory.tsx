@@ -6,7 +6,7 @@ import altarImg from "../assets/photos/ourStory/altar.jfif";
 
 export default function OurStory() {
   return (
-    <div className="autumn-background">
+    <div>
       <section className="page-section">
         <h1 className="page-title">Nossa História</h1>
         <p className="page-subtitle">Como tudo começou...</p>

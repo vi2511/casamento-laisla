@@ -37,15 +37,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="autumn-background">
+    <div className="home-container">
 
       {/* === NOME DO CASAL === */}
       <h1 className="couple-name">
         Lincoln & Vinícius
       </h1>
 
-      {/* === MOLDURA CLÁSSICA === */}
-      <div className="classic-frame">
+      {/* === MOLDURA NOVA (Estilo Galeria) === */}
+      <div className="home-photo-frame">
         <img
           src={homeImg} // TROQUE PELA FOTO REAL
           alt="casal"
@@ -53,7 +53,6 @@ export default function Home() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            borderRadius: "4px",
           }}
         />
       </div>

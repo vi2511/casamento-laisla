@@ -7,7 +7,7 @@ import qrcode from "../assets/photos/qrcode.jpg";
 
 export default function Gifts() {
     return (
-        <div className="autumn-background" style={{ minHeight: "100%", padding: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ minHeight: "100%", padding: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Card
                 style={{
                     maxWidth: 600,

@@ -45,7 +45,7 @@ export default function RSVP() {
   };
 
   return (
-    <div className="autumn-background" style={{ minHeight: "100%", padding: "20px" }}>
+    <div style={{ minHeight: "100%", padding: "20px" }}>
       {contextHolder}
       <div className="rsvp-container">
         <h1 className="rsvp-title">

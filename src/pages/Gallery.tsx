@@ -65,7 +65,7 @@ export default function Gallery() {
     }, [currentIndex]); // Re-run effect when currentIndex changes to ensure correct state
 
     return (
-        <div className="autumn-background">
+        <div>
             <div className="gallery-container">
                 <h1 className="gallery-title">Galeria de Fotos</h1>
                 <p className="gallery-subtitle">

@@ -13,7 +13,7 @@ export default function WeddingInfo() {
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   return (
-    <div className="autumn-background">
+    <div>
       <section className="page-section">
         <h1 className="page-title">Informações da Cerimônia</h1>
         <p className="page-subtitle">Todos os detalhes para o nosso grande dia</p>
