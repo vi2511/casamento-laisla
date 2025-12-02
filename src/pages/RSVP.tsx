@@ -10,6 +10,7 @@ const { TextArea } = Input;
 export default function RSVP() {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const [modal, contextHolder] = Modal.useModal();
 
   const onFinish = async (values: RSVPFormData) => {
     setLoading(true);
@@ -18,21 +19,21 @@ export default function RSVP() {
       const response = await apiService.submitRSVP(values);
 
       if (response.success) {
-        Modal.success({
+        modal.success({
           title: "Que alegria!",
           content: "Sua presença foi confirmada. Estamos ansiosos para celebrar com você!",
           okText: "Maravilha!",
         });
         form.resetFields();
       } else {
-        Modal.error({
+        modal.error({
           title: "Ops!",
           content: response.error || "Algo deu errado ao confirmar. Por favor, tente novamente ou entre em contato conosco.",
           okText: "Entendi",
         });
       }
     } catch (error) {
-      Modal.error({
+      modal.error({
         title: "Erro",
         content: "Erro ao confirmar presença. Por favor, tente novamente.",
         okText: "Fechar",
@@ -45,6 +46,7 @@ export default function RSVP() {
 
   return (
     <div className="autumn-background" style={{ minHeight: "100%", padding: "20px" }}>
+      {contextHolder}
       <div className="rsvp-container">
         <h1 className="rsvp-title">
           Confirme sua Presença
