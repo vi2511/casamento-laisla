@@ -1,4 +1,4 @@
-import { Form, Input, Button, InputNumber, message } from "antd";
+import { Form, Input, Button, InputNumber, Modal } from "antd";
 import { UserOutlined, MailOutlined, TeamOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { apiService } from "../services/api";
@@ -18,13 +18,25 @@ export default function RSVP() {
       const response = await apiService.submitRSVP(values);
 
       if (response.success) {
-        message.success("Presença confirmada com sucesso! Mal podemos esperar para te ver.");
+        Modal.success({
+          title: "Que alegria!",
+          content: "Sua presença foi confirmada. Estamos ansiosos para celebrar com você!",
+          okText: "Maravilha!",
+        });
         form.resetFields();
       } else {
-        message.error(response.error || "Erro ao confirmar presença. Por favor, tente novamente.");
+        Modal.error({
+          title: "Ops!",
+          content: response.error || "Algo deu errado ao confirmar. Por favor, tente novamente ou entre em contato conosco.",
+          okText: "Entendi",
+        });
       }
     } catch (error) {
-      message.error("Erro ao confirmar presença. Por favor, tente novamente.");
+      Modal.error({
+        title: "Erro",
+        content: "Erro ao confirmar presença. Por favor, tente novamente.",
+        okText: "Fechar",
+      });
       console.error("Error submitting RSVP:", error);
     } finally {
       setLoading(false);
