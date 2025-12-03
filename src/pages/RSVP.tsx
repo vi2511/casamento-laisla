@@ -45,14 +45,14 @@ export default function RSVP() {
   };
 
   return (
-    <div style={{ minHeight: "100%", padding: "20px" }}>
+    <div style={{ minHeight: "100%"}}>
       {contextHolder}
       <div className="rsvp-container">
         <h1 className="rsvp-title">
           Confirme sua Presença
         </h1>
         <p className="rsvp-description">
-          Por favor, preencha o formulário abaixo até o dia 04/02/2026.
+          Por favor, preencha o formulário abaixo até o dia 4/3/2026.
         </p>
 
         <Form

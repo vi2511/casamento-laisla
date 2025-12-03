@@ -124,7 +124,7 @@ export default function MainLayout() {
           </Header>
         )}
 
-        <Content style={{ background: "#f7f4ef", padding: "24px" }}>
+        <Content style={{ background: "#f7f4ef", padding: "5px" }}>
           <Outlet />
         </Content>
       </Layout>

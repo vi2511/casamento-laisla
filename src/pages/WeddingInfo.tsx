@@ -25,7 +25,7 @@ export default function WeddingInfo() {
               <div className="info-icon"><CalendarOutlined /></div>
               <div className="info-content">
                 <h3 className="info-label">Data</h3>
-                <p className="info-value">04 de Abril de 2026</p>
+                <p className="info-value">4 de abril de 2026</p>
               </div>
             </div>
 
