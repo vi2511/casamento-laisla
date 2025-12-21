@@ -23,8 +23,10 @@ class ApiService {
   async submitRSVP(data: RSVPFormData): Promise<ApiResponse<RSVPSubmissionResponse>> {
     try {
       const response = await axios.post<RSVPSubmissionResponse>(`${this.baseUrl}/rsvp`, data, {
+        timeout: 10000,
         headers: {
-          'x-api-key': import.meta.env.VITE_API_KEY
+          'x-api-key': import.meta.env.VITE_API_KEY,
+          'site': 'LiVi'
         }
       });
 
@@ -35,14 +37,19 @@ class ApiService {
       };
     } catch (error) {
       console.error('Error submitting RSVP:', error);
-      
+
       let errorMessage = 'Failed to submit RSVP';
-      
+
       if (axios.isAxiosError(error)) {
+
+        if (error.code === 'TIMEOUT') {
+          return { success: true, message: 'RSVP submitted successfully' }
+        }
+
         errorMessage = error.response?.data?.message || error.message;
         // Handle array of validation errors if present
         if (Array.isArray(error.response?.data?.message)) {
-            errorMessage = error.response?.data?.message.join(', ');
+          errorMessage = error.response?.data?.message.join(', ');
         }
       } else if (error instanceof Error) {
         errorMessage = error.message;

@@ -45,7 +45,7 @@ export default function RSVP() {
   };
 
   return (
-    <div style={{ minHeight: "100%"}}>
+    <div style={{ minHeight: "100%" }}>
       {contextHolder}
       <div className="rsvp-container">
         <h1 className="rsvp-title">
