@@ -30,7 +30,7 @@ export default function Home() {
       );
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      setTimeLeft(`${days} dias • ${hours} horas • ${minutes} minutos • ${seconds} segundos`);
+      setTimeLeft(`${days} d • ${hours} h • ${minutes} min • ${seconds} s`);
     }, 1000);
 
     return () => clearInterval(interval);
@@ -64,9 +64,9 @@ export default function Home() {
 
       {/* === CARD DA CONTAGEM REGRESSIVA === */}
       <div className="countdown-card">
-        <h2 className="countdown-title">
+        <h1 className="countdown-title">
           Contagem para o Grande Dia
-        </h2>
+        </h1>
 
         <div className="countdown-timer">
           {timeLeft}
