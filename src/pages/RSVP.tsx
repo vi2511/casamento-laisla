@@ -1,6 +1,6 @@
-import { Form, Input, Button, InputNumber, Modal } from "antd";
-import { UserOutlined, MailOutlined, TeamOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import { Form, Input, Button, InputNumber, Modal, message } from "antd";
+import { UserOutlined, MailOutlined, TeamOutlined, WhatsAppOutlined } from "@ant-design/icons";
+import { useState, useEffect } from "react";
 import { apiService } from "../services/api";
 import type { RSVPFormData } from "../types";
 import "../styles/home.css";
@@ -12,13 +12,79 @@ export default function RSVP() {
   const [loading, setLoading] = useState(false);
   const [modal, contextHolder] = Modal.useModal();
 
+  const [messageApi, contextHolderMessage] = message.useMessage();
+
+  useEffect(() => {
+    // Check for backup data on load
+    const backup = localStorage.getItem("rsvp_backup");
+    if (backup) {
+      try {
+        const values = JSON.parse(backup);
+        form.setFieldsValue(values);
+        messageApi.info("Dados restaurados do seu último preenchimento.");
+      } catch (e) {
+        localStorage.removeItem("rsvp_backup");
+      }
+    }
+  }, [form]);
+
+  const showFallbackError = (errorMessage?: string) => {
+    const whatsappMessage = encodeURIComponent(
+      `Olá! Tentei confirmar presença pelo site mas não consegui. \n\n` +
+      `Nome: ${form.getFieldValue('fullName')}\n` +
+      `Email: ${form.getFieldValue('email')}\n` +
+      `Adultos: ${form.getFieldValue('adults')}\n` +
+      `Crianças: ${form.getFieldValue('children')}\n` +
+      `Mensagem: ${form.getFieldValue('message') || 'Nenhuma'}`
+    );
+
+    const whatsappUrl = `https://wa.me/5515996727262?text=${whatsappMessage}`;
+
+    modal.error({
+      title: "Não foi possível conectar",
+      content: (
+        <div>
+          <p>{errorMessage || "Ocorreu um erro ao tentar enviar seus dados."}</p>
+          <p>Mas não se preocupe! Bloqueamos seus dados no navegador. Você pode tentar novamente mais tarde ou enviar diretamente pelo WhatsApp:</p>
+          <Button
+            type="primary"
+            icon={<WhatsAppOutlined />}
+            href={whatsappUrl}
+            target="_blank"
+            style={{ backgroundColor: '#25D366', borderColor: '#25D366', marginTop: '10px' }}
+          >
+            Enviar via WhatsApp
+          </Button>
+        </div>
+      ),
+      okText: "Entendi",
+      width: 500,
+    });
+  };
+
   const onFinish = async (values: RSVPFormData) => {
     setLoading(true);
+    // Save backup immediately
+    localStorage.setItem("rsvp_backup", JSON.stringify(values));
+
+    // Smart feedback for cold start
+    const coldStartTimer = setTimeout(() => {
+      messageApi.open({
+        type: 'loading',
+        content: 'Iniciando o servidor... Isso pode levar alguns segundos.',
+        duration: 0,
+        key: 'cold_start'
+      });
+    }, 3000);
 
     try {
       const response = await apiService.submitRSVP(values);
 
+      clearTimeout(coldStartTimer);
+      messageApi.destroy('cold_start');
+
       if (response.success) {
+        localStorage.removeItem("rsvp_backup"); // Clear backup on success
         modal.success({
           title: "Que alegria!",
           content: "Sua presença foi confirmada. Estamos ansiosos para celebrar com você!",
@@ -26,19 +92,13 @@ export default function RSVP() {
         });
         form.resetFields();
       } else {
-        modal.error({
-          title: "Ops!",
-          content: response.error || "Algo deu errado ao confirmar. Por favor, tente novamente ou entre em contato conosco.",
-          okText: "Entendi",
-        });
+        showFallbackError(response.error);
       }
     } catch (error) {
-      modal.error({
-        title: "Erro",
-        content: "Erro ao confirmar presença. Por favor, tente novamente.",
-        okText: "Fechar",
-      });
+      clearTimeout(coldStartTimer);
+      messageApi.destroy('cold_start');
       console.error("Error submitting RSVP:", error);
+      showFallbackError("Erro inesperado na aplicação.");
     } finally {
       setLoading(false);
     }
@@ -47,6 +107,7 @@ export default function RSVP() {
   return (
     <div style={{ minHeight: "100%" }}>
       {contextHolder}
+      {contextHolderMessage}
       <div className="rsvp-container">
         <h1 className="rsvp-title">
           Confirme sua Presença
