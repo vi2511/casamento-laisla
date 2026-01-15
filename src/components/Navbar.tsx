@@ -9,7 +9,7 @@ export default function Navbar() {
         padding: '20px',
         fontSize: '18px',
         fontWeight: 500,
-        borderBottom: '1px solid #ddd'
+        borderBottom: '1px solid var(--border-color)'
       }}
     >
       <Link to="/">Início</Link>

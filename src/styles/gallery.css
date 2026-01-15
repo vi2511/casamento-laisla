@@ -2,7 +2,7 @@
     font-size: 3rem;
     font-weight: 700;
     text-align: center;
-    color: #2c3e50;
+    color: var(--text-primary);
     margin-bottom: 1rem;
     font-family: 'Playfair Display', serif;
 }
@@ -10,7 +10,7 @@
 .gallery-subtitle {
     font-size: 1.2rem;
     text-align: center;
-    color: #7f8c8d;
+    color: var(--text-secondary);
     margin-bottom: 3rem;
     font-style: italic;
 }
@@ -23,7 +23,7 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    background: #fff;
+    background: var(--card-bg);
 }
 
 /* Carousel Slides */
@@ -112,7 +112,7 @@
 }
 
 .carousel-button svg {
-    color: #2c3e50;
+    color: var(--text-primary);
 }
 
 /* Carousel Indicators */
@@ -127,7 +127,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    border: 2px solid #bdc3c7;
+    border: 2px solid var(--border-color);
     background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -135,13 +135,13 @@
 }
 
 .indicator:hover {
-    background: #95a5a6;
-    border-color: #95a5a6;
+    background: var(--text-secondary);
+    border-color: var(--text-secondary);
 }
 
 .indicator.active {
-    background: #e74c3c;
-    border-color: #e74c3c;
+    background: var(--accent-color);
+    border-color: var(--accent-color);
     width: 14px;
     height: 14px;
 }
@@ -170,8 +170,8 @@
 }
 
 .gallery-thumbnail.active {
-    border: 3px solid #e74c3c;
-    box-shadow: 0 8px 24px rgba(231, 76, 60, 0.3);
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 8px 24px rgba(106, 76, 156, 0.3);
 }
 
 .gallery-thumbnail img {

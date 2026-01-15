@@ -13,18 +13,18 @@ export default function Gifts() {
                     maxWidth: 600,
                     width: "100%",
                     textAlign: "center",
-                    backgroundColor: "rgba(255, 255, 255, 0.95)",
+                    backgroundColor: "var(--card-bg)",
                     borderRadius: "16px",
                     boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
                 }}
             >
-                <GiftOutlined style={{ fontSize: "48px", color: "#d45b5b", marginBottom: "16px" }} />
+                <GiftOutlined style={{ fontSize: "48px", color: "var(--accent-color)", marginBottom: "16px" }} />
 
-                <Title level={2} style={{ color: "#5c3a21", fontFamily: "'Playfair Display', serif" }}>
+                <Title level={2} style={{ color: "var(--text-primary)", fontFamily: "'Playfair Display', serif" }}>
                     Lista de Presentes
                 </Title>
 
-                <Paragraph style={{ fontSize: "16px", lineHeight: "1.8", color: "#5c3a21", marginBottom: "32px" }}>
+                <Paragraph style={{ fontSize: "16px", lineHeight: "1.8", color: "var(--text-secondary)", marginBottom: "32px" }}>
                     A sua presença é o nosso maior presente! <br />
                     Optamos por não fazer uma lista de presentes tradicional.
                     Entretanto, caso deseje contribuir com o início da nossa vida a dois,

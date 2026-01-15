@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 import { router } from './routes';
+import './index.css'; // Importing global styles
+
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

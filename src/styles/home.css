@@ -1,8 +1,6 @@
-/* Fundo texturizado em estilo outono */
+/* Fundo texturizado em estilo outono - substituído por gradiente global */
 .autumn-background {
-  background: url("https://www.transparenttextures.com/patterns/old-wall.png"),
-    linear-gradient(#f2e8cf, #e8d9c5);
-  background-size: auto;
+  background: transparent;
   min-height: 100vh;
   padding: 40px 20px;
   text-align: center;
@@ -73,7 +71,7 @@
 /* Typography & Layout */
 .couple-name {
   font-size: 64px;
-  color: #556B2F;
+  color: var(--theme-purple-main);
   margin-bottom: 10px;
   font-family: 'Great Vibes', cursive;
   line-height: 1.2;
@@ -81,18 +79,18 @@
 
 .romantic-quote {
   font-size: 30px;
-  color: #6B4F2A;
+  color: var(--text-secondary);
   margin-bottom: 30px;
   font-family: 'Great Vibes', cursive;
   padding: 0 10px;
 }
 
 .countdown-card {
-  background: #f7f1e3;
+  background: var(--card-bg);
   padding: 25px 40px;
   display: inline-block;
   border-radius: 16px;
-  border: 2px solid #b08968;
+  border: 2px solid var(--border-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   margin-bottom: 30px;
   max-width: 100%;
@@ -100,7 +98,7 @@
 }
 
 .countdown-title {
-  color: #5f5b45;
+  color: var(--text-secondary);
   margin-bottom: 8px;
   font-family: 'Playfair Display', serif;
   font-size: 1.3em;
@@ -109,14 +107,14 @@
 .countdown-timer {
   font-size: 22px;
   font-weight: bold;
-  color: #4a4633;
+  color: var(--text-primary);
   font-family: 'Playfair Display', serif;
 }
 
 .rsvp-button {
-  background: #556B2F !important;
-  border-color: #556B2F !important;
-  color: white !important;
+  background: var(--button-bg) !important;
+  border-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
   font-size: 20px !important;
   padding: 0 30px !important;
   height: 50px !important;
@@ -132,41 +130,42 @@
 .rsvp-container {
   max-width: 600px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--card-bg);
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(85, 107, 47, 0.2);
-  border: 1px solid #e8d9c5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
 }
 
 .rsvp-title {
   text-align: center;
   font-family: 'Great Vibes', cursive;
   font-size: 48px;
-  color: #556B2F;
+  color: var(--text-primary);
   margin-bottom: 10px;
 }
 
 .rsvp-description {
   text-align: center;
   margin-bottom: 30px;
-  color: #6B4F2A;
+  color: var(--text-secondary);
   font-size: 18px;
   font-family: 'Playfair Display', serif;
 }
 
 .form-label {
   font-family: 'Playfair Display', serif;
-  color: #4a4633;
+  color: var(--text-primary);
 }
 
 .form-icon {
-  color: #b08968;
+  color: var(--accent-color);
 }
 
 .submit-button {
-  background: #556B2F !important;
-  border-color: #556B2F !important;
+  background: var(--button-bg) !important;
+  border-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
   font-family: 'Playfair Display', serif !important;
   height: 50px !important;
   font-size: 18px !important;
@@ -183,14 +182,14 @@
 .page-title {
   font-family: 'Great Vibes', cursive;
   font-size: 48px;
-  color: #556B2F;
+  color: var(--text-primary);
   margin-bottom: 20px;
   text-align: center;
 }
 
 .page-subtitle {
   font-size: 18px;
-  color: #4a4633;
+  color: var(--text-secondary);
   text-align: center;
   font-family: 'Playfair Display', serif;
 }
@@ -199,7 +198,7 @@
   line-height: 32px;
   font-family: 'Playfair Display', serif;
   font-size: 18px;
-  color: #4a4633;
+  color: var(--text-secondary);
   list-style-type: none;
   padding: 0;
   text-align: center;
@@ -244,7 +243,7 @@
 .story-date {
   font-family: 'Great Vibes', cursive;
   font-size: 32px;
-  color: #b08968;
+  color: var(--theme-purple-main);
   margin-bottom: 10px;
   display: block;
 }
@@ -252,14 +251,14 @@
 .story-title {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
-  color: #556B2F;
+  color: var(--text-primary);
   margin-bottom: 15px;
 }
 
 .story-text {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
-  color: #4a4633;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 

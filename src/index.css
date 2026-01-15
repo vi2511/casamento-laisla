@@ -3,9 +3,45 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* --- Strict Purple & Green Palette --- */
+
+  /* Purples */
+  --theme-purple-dark: #2D1B36;
+  /* Deepest Purple (Sidebar, Main Text) */
+  --theme-purple-main: #6A4C9C;
+  /* Medium Purple (Headings, Primary Elements) */
+  --theme-purple-light: #E8D6E4;
+  /* User's Pink/Purple (Cards, Sections) */
+
+  /* Greens */
+  --theme-green-main: #8FB3AC;
+  /* User's Green - Darkened v2 */
+  --theme-green-dark: #4E7A70;
+  /* Darker Green (Contrast accents) */
+  --theme-green-light: #B8D8D0;
+  /* Global BG - Darkened v3 (Undeniably Green) */
+
+  /* Functional Mappings */
+  --primary-bg: var(--theme-green-light);
+  --card-bg: #EBF5F2;
+  /* Card BG - Off-white Green (Not pure white) */
+  --text-primary: var(--theme-purple-dark);
+  --text-secondary: #5d4b66;
+  /* Muted Purple for secondary text */
+  --border-color: var(--theme-green-main);
+
+  --button-bg: var(--theme-green-main);
+  --button-text: var(--theme-purple-dark);
+  /* High Contrast */
+
+  --sidebar-bg: var(--theme-purple-dark);
+  --menu-hover: var(--theme-green-main);
+  --menu-text-active: var(--theme-purple-dark);
+
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--primary-bg) !important;
+  background-image: none !important;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,26 +49,39 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--primary-bg);
+  color: var(--text-primary);
+  /* Removed display: flex and place-items: center to fix layout regression */
+}
+
+#root {
+  width: 100%;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--theme-purple-main);
+}
+
+a {
+  font-weight: 500;
+  color: var(--theme-purple-main);
+  text-decoration: inherit;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--theme-green-dark);
 }
 
 button {
@@ -42,27 +91,80 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.25s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  filter: brightness(0.95);
+  border-color: var(--theme-purple-main);
+  transform: translateY(-1px);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto var(--theme-green-main);
+}
+
+/* --- Ant Design Overrides (Strict No-Blue) --- */
+
+/* Menu Item Hover & Active */
+.ant-menu-item:hover,
+.ant-menu-submenu-title:hover {
+  background-color: var(--theme-green-main) !important;
+  color: var(--menu-text-active) !important;
+}
+
+.ant-menu-item-selected,
+li.ant-menu-item-selected {
+  background-color: var(--theme-green-main) !important;
+  color: var(--menu-text-active) !important;
+}
+
+/* Ensure links inside menu items inherit color */
+.ant-menu-item:hover a,
+.ant-menu-item-selected a,
+.ant-menu-item:hover .anticon,
+.ant-menu-item-selected .anticon {
+  color: var(--menu-text-active) !important;
+}
+
+/* Drawer / Sidebar Backgrounds */
+.ant-layout-sider,
+.ant-menu,
+.ant-drawer-content-wrapper,
+.ant-drawer-body {
+  background-color: var(--theme-purple-dark) !important;
+  color: white;
+}
+
+/* Buttons */
+.ant-btn-primary {
+  background-color: var(--button-bg) !important;
+  border-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  font-weight: 600;
+}
+
+.ant-btn-primary:hover {
+  background-color: var(--theme-green-dark) !important;
+  border-color: var(--theme-green-dark) !important;
+  color: white !important;
+}
+
+/* Inputs and Forms */
+.ant-input:hover,
+.ant-input:focus {
+  border-color: var(--theme-green-main) !important;
+  box-shadow: 0 0 0 2px rgba(192, 219, 214, 0.2) !important;
+}
+
+/* Custom Overrides for specific classes used in project */
+.rsvp-button,
+.submit-button {
+  background: var(--button-bg) !important;
+  border-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
 }

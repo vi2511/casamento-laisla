@@ -6,11 +6,11 @@
 }
 
 .info-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--card-bg);
     border-radius: 16px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(85, 107, 47, 0.15);
-    border: 2px solid #e8d9c5;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--border-color);
     margin-bottom: 40px;
 }
 
@@ -19,7 +19,7 @@
     align-items: flex-start;
     gap: 20px;
     padding: 25px 0;
-    border-bottom: 1px solid #e8d9c5;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .info-item:last-child {
@@ -39,7 +39,7 @@
 .info-label {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
-    color: #556B2F;
+    color: var(--text-primary);
     margin: 0 0 8px 0;
     font-weight: 600;
 }
@@ -47,7 +47,7 @@
 .info-value {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: #4a4633;
+    color: var(--text-secondary);
     margin: 0;
     font-weight: 500;
 }
@@ -55,25 +55,25 @@
 .info-address {
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
-    color: #6B4F2A;
+    color: var(--text-secondary);
     margin: 8px 0 0 0;
     line-height: 1.6;
 }
 
 /* Map Container */
 .map-container {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--card-bg);
     border-radius: 16px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(85, 107, 47, 0.15);
-    border: 2px solid #e8d9c5;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--border-color);
     margin-bottom: 40px;
 }
 
 .map-title {
     font-family: 'Great Vibes', cursive;
     font-size: 2rem;
-    color: #556B2F;
+    color: var(--text-primary);
     margin: 0 0 20px 0;
     text-align: center;
 }
@@ -139,17 +139,17 @@
 
 /* Additional Info */
 .additional-info {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--card-bg);
     border-radius: 16px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(85, 107, 47, 0.15);
-    border: 2px solid #e8d9c5;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--border-color);
 }
 
 .additional-title {
     font-family: 'Great Vibes', cursive;
     font-size: 2rem;
-    color: #556B2F;
+    color: var(--text-primary);
     margin: 0 0 25px 0;
     text-align: center;
 }
@@ -163,9 +163,9 @@
 .additional-list li {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
-    color: #4a4633;
+    color: var(--text-secondary);
     padding: 15px 0;
-    border-bottom: 1px solid #e8d9c5;
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     gap: 15px;

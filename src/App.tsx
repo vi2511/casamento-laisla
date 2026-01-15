@@ -32,38 +32,38 @@ export default function MainLayout() {
   const menuItems = [
     {
       key: "home",
-      icon: <HomeOutlined style={{ color: "#f2e8cf" }} />,
-      label: <Link style={{ color: "#f2e8cf" }} to="/">Início</Link>,
+      icon: <HomeOutlined style={{ color: "white" }} />,
+      label: <Link style={{ color: "white" }} to="/">Início</Link>,
     },
     {
       key: "story",
-      icon: <HeartOutlined style={{ color: "#f2e8cf" }} />,
-      label: <Link style={{ color: "#f2e8cf" }} to="/historia">Nossa História</Link>,
+      icon: <HeartOutlined style={{ color: "white" }} />,
+      label: <Link style={{ color: "white" }} to="/historia">Nossa História</Link>,
     },
     {
       key: "info",
-      icon: <InfoCircleOutlined style={{ color: "#f2e8cf" }} />,
-      label: <Link style={{ color: "#f2e8cf" }} to="/informacoes">Informações</Link>,
+      icon: <InfoCircleOutlined style={{ color: "white" }} />,
+      label: <Link style={{ color: "white" }} to="/informacoes">Informações</Link>,
     },
     {
       key: "gifts",
-      icon: <GiftOutlined style={{ color: "#f2e8cf" }} />,
-      label: <Link style={{ color: "#f2e8cf" }} to="/presentes">Presentes</Link>,
+      icon: <GiftOutlined style={{ color: "white" }} />,
+      label: <Link style={{ color: "white" }} to="/presentes">Presentes</Link>,
     },
     {
       key: "photos",
-      icon: <PictureOutlined style={{ color: "#f2e8cf" }} />,
-      label: <Link style={{ color: "#f2e8cf" }} to="/fotos">Fotos</Link>,
+      icon: <PictureOutlined style={{ color: "white" }} />,
+      label: <Link style={{ color: "white" }} to="/fotos">Fotos</Link>,
     },
     {
       key: "rsvp",
-      icon: <TeamOutlined style={{ color: "#f2e8cf" }} />,
-      label: <Link style={{ color: "#f2e8cf" }} to="/rsvp">Confirmar Presença</Link>,
+      icon: <TeamOutlined style={{ color: "white" }} />,
+      label: <Link style={{ color: "white" }} to="/rsvp">Confirmar Presença</Link>,
     },
   ];
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout style={{ minHeight: "100vh", background: "transparent" }}>
       {/* Desktop Sidebar */}
       {!isMobile && (
         <Sider
@@ -71,7 +71,7 @@ export default function MainLayout() {
           collapsed={collapsed}
           onCollapse={(v) => setCollapsed(v)}
           style={{
-            background: "#5f5b45",
+            background: "var(--theme-purple-dark)",
             zIndex: 100,
           }}
         >
@@ -80,7 +80,7 @@ export default function MainLayout() {
             theme="dark"
             mode="inline"
             defaultSelectedKeys={["home"]}
-            style={{ background: "#5f5b45" }}
+            style={{ background: "var(--theme-purple-dark)" }}
             items={menuItems}
           />
         </Sider>
@@ -89,27 +89,27 @@ export default function MainLayout() {
       {/* Mobile Drawer */}
       {isMobile && (
         <Drawer
-          title={<span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "24px", color: "#556B2F" }}>Menu</span>}
+          title={<span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "24px", color: "var(--text-primary)" }}>Menu</span>}
           placement="left"
           onClose={() => setMobileMenuOpen(false)}
           open={mobileMenuOpen}
           width="100%"
-          styles={{ body: { padding: 0, background: "#5f5b45" }, header: { background: "#f7f4ef" } }}
+          styles={{ body: { padding: 0, background: "var(--theme-purple-dark)" }, header: { background: "var(--primary-bg)" } }}
         >
           <Menu
             theme="dark"
             mode="inline"
             defaultSelectedKeys={["home"]}
-            style={{ background: "#5f5b45", height: "100%" }}
+            style={{ background: "var(--theme-purple-dark)", height: "100%" }}
             items={menuItems}
           />
         </Drawer>
       )}
 
-      <Layout>
+      <Layout style={{ background: "transparent" }}>
         {/* Header with Hamburger Button (only on mobile or when sidebar is collapsed/hidden) */}
         {isMobile && (
-          <Header style={{ padding: 0, background: "#f7f4ef", display: 'flex', alignItems: 'center' }}>
+          <Header style={{ padding: 0, background: "var(--primary-bg)", display: 'flex', alignItems: 'center' }}>
             <Button
               type="text"
               icon={<MenuOutlined />}
@@ -118,13 +118,13 @@ export default function MainLayout() {
                 fontSize: '16px',
                 width: 64,
                 height: 64,
-                color: "#5f5b45"
+                color: "var(--text-primary)"
               }}
             />
           </Header>
         )}
 
-        <Content style={{ background: "#f7f4ef", padding: "5px" }}>
+        <Content style={{ background: "transparent", padding: "5px" }}>
           <Outlet />
         </Content>
       </Layout>
