@@ -18,8 +18,8 @@
   /* User's Green - Darkened v2 */
   --theme-green-dark: #4E7A70;
   /* Darker Green (Contrast accents) */
-  --theme-green-light: #B8D8D0;
-  /* Global BG - Darkened v3 (Undeniably Green) */
+  --theme-green-light: #E0F2EE;
+  /* Global BG - Very Pale Mint (Lighter) */
 
   /* Functional Mappings */
   --primary-bg: var(--theme-green-light);
@@ -98,8 +98,9 @@ button {
 }
 
 button:hover {
-  filter: brightness(0.95);
-  border-color: var(--theme-purple-main);
+  background-color: var(--theme-purple-dark) !important;
+  color: white !important;
+  border-color: var(--theme-purple-dark) !important;
   transform: translateY(-1px);
 }
 
@@ -149,8 +150,8 @@ li.ant-menu-item-selected {
 }
 
 .ant-btn-primary:hover {
-  background-color: var(--theme-green-dark) !important;
-  border-color: var(--theme-green-dark) !important;
+  background-color: var(--theme-purple-dark) !important;
+  border-color: var(--theme-purple-dark) !important;
   color: white !important;
 }
 
@@ -167,4 +168,21 @@ li.ant-menu-item-selected {
   background: var(--button-bg) !important;
   border-color: var(--button-bg) !important;
   color: var(--button-text) !important;
+  transition: all 0.3s ease !important;
+}
+
+.rsvp-button:hover,
+.submit-button:hover,
+.rsvp-button:focus,
+.submit-button:focus {
+  background: var(--theme-purple-dark) !important;
+  border-color: var(--theme-purple-dark) !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 27, 54, 0.2);
+}
+
+.rsvp-button:hover a,
+.submit-button:hover a {
+  color: white !important;
 }
