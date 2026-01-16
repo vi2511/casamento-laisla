@@ -113,7 +113,7 @@ export default function RSVP() {
           Confirme sua Presença
         </h1>
         <p className="rsvp-description">
-          Por favor, preencha o formulário abaixo até o dia 4/3/2026.
+          Por favor, preencha o formulário abaixo até o dia 11/4/2026.
         </p>
 
         <Form
@@ -140,7 +140,6 @@ export default function RSVP() {
             label={<span className="form-label">E-mail</span>}
             rules={[
               { type: "email", message: "O e-mail não é válido!" },
-              { required: true, message: "Por favor, insira seu e-mail!" },
             ]}
           >
             <Input prefix={<MailOutlined className="form-icon" />} placeholder="seu@email.com" />

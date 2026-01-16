@@ -7,7 +7,7 @@ import homeImg from "../assets/photos/home.jfif";
 
 export default function Home() {
   // === CONTAGEM REGRESSIVA ===
-  const weddingDate = new Date("2026-04-04T18:00:00").getTime();
+  const weddingDate = new Date("2026-04-11T18:00:00").getTime();
   const [timeLeft, setTimeLeft] = useState("");
 
   useEffect(() => {

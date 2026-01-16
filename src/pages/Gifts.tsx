@@ -20,16 +20,16 @@ export default function Gifts() {
             >
                 <GiftOutlined style={{ fontSize: "48px", color: "var(--accent-color)", marginBottom: "16px" }} />
 
-                <Title level={2} style={{ color: "var(--text-primary)", fontFamily: "'Playfair Display', serif" }}>
+                <Title level={2} style={{ color: "var(--text-primary)", fontFamily: "Arial, Helvetica, sans-serif" }}>
                     Lista de Presentes
                 </Title>
 
-                <Paragraph style={{ fontSize: "16px", lineHeight: "1.8", color: "var(--text-secondary)", marginBottom: "32px" }}>
+                <Paragraph style={{ fontSize: "13px", lineHeight: "1.8", color: "var(--text-secondary)", marginBottom: "32px" }}>
                     A sua presença é o nosso maior presente! <br />
                     Optamos por não fazer uma lista de presentes tradicional.
-                    Entretanto, caso deseje contribuir com o início da nossa vida a dois,
-                    disponibilizamos um QR Code para que possa nos presentear com o valor que seu coração desejar,
-                    sem que isso pese no seu orçamento.
+                    No entanto, caso deseje contribuir com o início da nossa vida a dois,
+                    disponibilizamos um QR Code abaixo. Sinta-se à vontade para nos presentear
+                    com o que o seu coração desejar!
                 </Paragraph>
 
 

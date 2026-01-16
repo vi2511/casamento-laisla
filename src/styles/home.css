@@ -5,7 +5,7 @@
   padding: 40px 20px;
   text-align: center;
   animation: fadeIn 1.2s ease-in-out;
-  font-family: "Playfair Display", serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Animação de fade-in da página */
@@ -100,26 +100,26 @@
 .countdown-title {
   color: var(--text-secondary);
   margin-bottom: 8px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
 }
 
 .countdown-timer {
-  font-size: 22px;
+  font-size: 19px;
   font-weight: bold;
   color: var(--text-primary);
-  font-family: 'Playfair Display', serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .rsvp-button {
   background: var(--button-bg) !important;
   border-color: var(--button-bg) !important;
   color: var(--button-text) !important;
-  font-size: 20px !important;
+  font-size: 17px !important;
   padding: 0 30px !important;
   height: 50px !important;
   border-radius: 12px !important;
-  font-family: 'Playfair Display', serif !important;
+  font-family: Arial, Helvetica, sans-serif !important;
   white-space: normal !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -149,12 +149,12 @@
   text-align: center;
   margin-bottom: 30px;
   color: var(--text-secondary);
-  font-size: 18px;
-  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-label {
-  font-family: 'Playfair Display', serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: var(--text-primary);
 }
 
@@ -166,9 +166,9 @@
   background: var(--button-bg) !important;
   border-color: var(--button-bg) !important;
   color: var(--button-text) !important;
-  font-family: 'Playfair Display', serif !important;
+  font-family: Arial, Helvetica, sans-serif !important;
   height: 50px !important;
-  font-size: 18px !important;
+  font-size: 15px !important;
   margin-top: 10px !important;
 }
 
@@ -188,16 +188,16 @@
 }
 
 .page-subtitle {
-  font-size: 18px;
+  font-size: 15px;
   color: var(--text-secondary);
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .info-list {
   line-height: 32px;
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
   color: var(--text-secondary);
   list-style-type: none;
   padding: 0;
@@ -249,15 +249,15 @@
 }
 
 .story-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
   color: var(--text-primary);
   margin-bottom: 15px;
 }
 
 .story-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
   color: var(--text-secondary);
   line-height: 1.6;
 }

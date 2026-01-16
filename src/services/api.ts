@@ -26,7 +26,7 @@ class ApiService {
         timeout: 60000,
         headers: {
           'x-api-key': import.meta.env.VITE_API_KEY,
-          'site': 'LiVi'
+          'site': 'LaAl'
         }
       });
 

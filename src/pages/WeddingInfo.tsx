@@ -1,11 +1,12 @@
 import "../styles/home.css";
 import "../styles/wedding-info.css";
-import { CalendarOutlined, ClockCircleOutlined, EnvironmentOutlined, SkinOutlined } from "@ant-design/icons";
+import { CalendarOutlined, ClockCircleOutlined, EnvironmentOutlined, ShopOutlined, SkinOutlined } from "@ant-design/icons";
 
 export default function WeddingInfo() {
   // Endereço do local do casamento
-  const address = "Rua Fernando Silva, 110 - Jardim do Sol, Sorocaba - SP, 18017-034";
-  const addressEncoded = encodeURIComponent(address);
+  const address = "Av. Independência, 5070 - Éden, Sorocaba";
+  const addressChurch = "Rua Padre Antônio Bento, 86 - Éden, Sorocaba - SP, 18103-130";
+  const addressEncoded = encodeURIComponent(addressChurch);
 
   // Links para navegação
   const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${addressEncoded}`;
@@ -25,7 +26,7 @@ export default function WeddingInfo() {
               <div className="info-icon"><CalendarOutlined /></div>
               <div className="info-content">
                 <h3 className="info-label">Data</h3>
-                <p className="info-value">4 de abril de 2026</p>
+                <p className="info-value">11 de abril de 2026</p>
               </div>
             </div>
 
@@ -33,7 +34,7 @@ export default function WeddingInfo() {
               <div className="info-icon"><ClockCircleOutlined /></div>
               <div className="info-content">
                 <h3 className="info-label">Horário</h3>
-                <p className="info-value">18h</p>
+                <p className="info-value">15h</p>
               </div>
             </div>
 
@@ -41,7 +42,16 @@ export default function WeddingInfo() {
               <div className="info-icon"><EnvironmentOutlined /></div>
               <div className="info-content">
                 <h3 className="info-label">Local</h3>
-                <p className="info-value">Restaurante Via Brasil</p>
+                <p className="info-value">Paróquia Nossa Senhora da Piedade</p>
+                <p className="info-address">{addressChurch}</p>
+              </div>
+            </div>
+
+            <div className="info-item">
+              <div className="info-icon"><ShopOutlined /></div>
+              <div className="info-content">
+                <h3 className="info-label">Local</h3>
+                <p className="info-value">Restaurante Panela de Barro</p>
                 <p className="info-address">{address}</p>
               </div>
             </div>

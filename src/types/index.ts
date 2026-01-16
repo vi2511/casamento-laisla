@@ -1,7 +1,7 @@
 // RSVP Form Data
 export interface RSVPFormData {
   fullName: string;
-  email: string;
+  email?: string;
   adults: number;
   children: number;
   message?: string;
