@@ -1,12 +1,8 @@
 import { Layout, Menu, Button, Drawer, Grid } from "antd";
 import {
   HomeOutlined,
-  HeartOutlined,
-  GiftOutlined,
-  PictureOutlined,
   TeamOutlined,
   MenuOutlined,
-  InfoCircleOutlined,
 } from "@ant-design/icons";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
