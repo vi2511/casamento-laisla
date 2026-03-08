@@ -25,28 +25,24 @@ export default function RSVP() {
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
     // Show confirmation modal
-    modal.success({
+    modal.confirm({
       title: "Que alegria!",
       content: (
         <div>
           <p>Você será redirecionado para o WhatsApp para confirmar sua presença.</p>
           <p style={{ marginTop: '10px', fontSize: '12px', color: '#666' }}>
-            Se o WhatsApp não abrir automaticamente, clique no botão abaixo.
+            Clique no botão abaixo para abrir o WhatsApp.
           </p>
         </div>
       ),
       okText: "Abrir WhatsApp",
+      cancelText: "Cancelar",
       onOk: () => {
         window.open(whatsappUrl, '_blank');
         form.resetFields();
       },
       icon: <WhatsAppOutlined style={{ color: '#25D366' }} />,
     });
-
-    // Auto-open WhatsApp after a short delay
-    setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
-    }, 500);
   };
 
   return (
