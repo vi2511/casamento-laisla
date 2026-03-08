@@ -12,12 +12,12 @@ export default function RSVP() {
   const onFinish = (values: RSVPFormData) => {
     // Format the WhatsApp message
     const whatsappMessage = encodeURIComponent(
-      `🎉 *Confirmação de Presença* 🎉\n\n` +
-      `👤 *Nome:* ${values.fullName}\n` +
-      `📧 *Email:* ${values.email || 'Não informado'}\n` +
-      `👨‍👩‍👧‍👦 *Adultos:* ${values.adults}\n` +
-      `👶 *Crianças:* ${values.children || 0}\n` +
-      `💌 *Mensagem:* ${values.message || 'Nenhuma mensagem'}`
+      ` *Confirmação de Presença* \n\n` +
+      ` *Nome:* ${values.fullName}\n` +
+      ` *Email:* ${values.email || 'Não informado'}\n` +
+      ` *Adultos:* ${values.adults}\n` +
+      ` *Crianças:* ${values.children || 0}\n` +
+      ` *Mensagem:* ${values.message || 'Nenhuma mensagem'}`
     );
 
     // WhatsApp number (replace with the actual number)
