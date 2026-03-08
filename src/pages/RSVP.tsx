@@ -1,7 +1,5 @@
-import { Form, Input, Button, InputNumber, Modal, message } from "antd";
+import { Form, Input, Button, InputNumber, Modal } from "antd";
 import { UserOutlined, MailOutlined, TeamOutlined, WhatsAppOutlined } from "@ant-design/icons";
-import { useState, useEffect } from "react";
-import { apiService } from "../services/api";
 import type { RSVPFormData } from "../types";
 import "../styles/home.css";
 
@@ -9,111 +7,57 @@ const { TextArea } = Input;
 
 export default function RSVP() {
   const [form] = Form.useForm();
-  const [loading, setLoading] = useState(false);
   const [modal, contextHolder] = Modal.useModal();
 
-  const [messageApi, contextHolderMessage] = message.useMessage();
-
-  useEffect(() => {
-    // Check for backup data on load
-    const backup = localStorage.getItem("rsvp_backup");
-    if (backup) {
-      try {
-        const values = JSON.parse(backup);
-        form.setFieldsValue(values);
-        messageApi.info("Dados restaurados do seu último preenchimento.");
-      } catch (e) {
-        localStorage.removeItem("rsvp_backup");
-      }
-    }
-  }, [form]);
-
-  const showFallbackError = (errorMessage?: string) => {
+  const onFinish = (values: RSVPFormData) => {
+    // Format the WhatsApp message
     const whatsappMessage = encodeURIComponent(
-      `Olá! Tentei confirmar presença pelo site mas não consegui. \n\n` +
-      `Nome: ${form.getFieldValue('fullName')}\n` +
-      `Email: ${form.getFieldValue('email')}\n` +
-      `Adultos: ${form.getFieldValue('adults')}\n` +
-      `Crianças: ${form.getFieldValue('children')}\n` +
-      `Mensagem: ${form.getFieldValue('message') || 'Nenhuma'}`
+      `🎉 *Confirmação de Presença* 🎉\n\n` +
+      `👤 *Nome:* ${values.fullName}\n` +
+      `📧 *Email:* ${values.email || 'Não informado'}\n` +
+      `👨‍👩‍👧‍👦 *Adultos:* ${values.adults}\n` +
+      `👶 *Crianças:* ${values.children || 0}\n` +
+      `💌 *Mensagem:* ${values.message || 'Nenhuma mensagem'}`
     );
 
-    const whatsappUrl = `https://wa.me/5515996727262?text=${whatsappMessage}`;
+    // WhatsApp number (replace with the actual number)
+    const whatsappNumber = '5515991217140';
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-    modal.error({
-      title: "Não foi possível conectar",
+    // Show confirmation modal
+    modal.success({
+      title: "Que alegria!",
       content: (
         <div>
-          <p>{errorMessage || "Ocorreu um erro ao tentar enviar seus dados."}</p>
-          <p>Mas não se preocupe! Bloqueamos seus dados no navegador. Você pode tentar novamente mais tarde ou enviar diretamente pelo WhatsApp:</p>
-          <Button
-            type="primary"
-            icon={<WhatsAppOutlined />}
-            href={whatsappUrl}
-            target="_blank"
-            style={{ backgroundColor: '#25D366', borderColor: '#25D366', marginTop: '10px' }}
-          >
-            Enviar via WhatsApp
-          </Button>
+          <p>Você será redirecionado para o WhatsApp para confirmar sua presença.</p>
+          <p style={{ marginTop: '10px', fontSize: '12px', color: '#666' }}>
+            Se o WhatsApp não abrir automaticamente, clique no botão abaixo.
+          </p>
         </div>
       ),
-      okText: "Entendi",
-      width: 500,
-    });
-  };
-
-  const onFinish = async (values: RSVPFormData) => {
-    setLoading(true);
-    // Save backup immediately
-    localStorage.setItem("rsvp_backup", JSON.stringify(values));
-
-    // Smart feedback for cold start
-    const coldStartTimer = setTimeout(() => {
-      messageApi.open({
-        type: 'loading',
-        content: 'Iniciando o servidor... Isso pode levar alguns segundos.',
-        duration: 0,
-        key: 'cold_start'
-      });
-    }, 3000);
-
-    try {
-      const response = await apiService.submitRSVP(values);
-
-      clearTimeout(coldStartTimer);
-      messageApi.destroy('cold_start');
-
-      if (response.success) {
-        localStorage.removeItem("rsvp_backup"); // Clear backup on success
-        modal.success({
-          title: "Que alegria!",
-          content: "Sua presença foi confirmada. Estamos ansiosos para celebrar com você!",
-          okText: "Maravilha!",
-        });
+      okText: "Abrir WhatsApp",
+      onOk: () => {
+        window.open(whatsappUrl, '_blank');
         form.resetFields();
-      } else {
-        showFallbackError(response.error);
-      }
-    } catch (error) {
-      clearTimeout(coldStartTimer);
-      messageApi.destroy('cold_start');
-      console.error("Error submitting RSVP:", error);
-      showFallbackError("Erro inesperado na aplicação.");
-    } finally {
-      setLoading(false);
-    }
+      },
+      icon: <WhatsAppOutlined style={{ color: '#25D366' }} />,
+    });
+
+    // Auto-open WhatsApp after a short delay
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+    }, 500);
   };
 
   return (
     <div style={{ minHeight: "100%" }}>
       {contextHolder}
-      {contextHolderMessage}
       <div className="rsvp-container">
         <h1 className="rsvp-title">
           Confirme sua Presença
         </h1>
         <p className="rsvp-description">
-          Por favor, preencha o formulário abaixo até o dia 11/4/2026.
+          Por favor, preencha o formulário abaixo até o dia 4/3/2026.
         </p>
 
         <Form
@@ -181,10 +125,10 @@ export default function RSVP() {
               htmlType="submit"
               block
               size="large"
-              loading={loading}
               className="submit-button"
+              icon={<WhatsAppOutlined />}
             >
-              Confirmar Presença
+              Enviar via WhatsApp
             </Button>
           </Form.Item>
         </Form>

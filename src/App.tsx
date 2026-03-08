@@ -35,7 +35,7 @@ export default function MainLayout() {
       icon: <HomeOutlined style={{ color: "white" }} />,
       label: <Link style={{ color: "white" }} to="/">Início</Link>,
     },
-    {
+    /*{
       key: "story",
       icon: <HeartOutlined style={{ color: "white" }} />,
       label: <Link style={{ color: "white" }} to="/historia">Nossa História</Link>,
@@ -54,7 +54,7 @@ export default function MainLayout() {
       key: "photos",
       icon: <PictureOutlined style={{ color: "white" }} />,
       label: <Link style={{ color: "white" }} to="/fotos">Fotos</Link>,
-    },
+    },*/
     {
       key: "rsvp",
       icon: <TeamOutlined style={{ color: "white" }} />,

@@ -32,7 +32,7 @@ export default function MainLayout() {
               icon: <HomeOutlined />,
               label: <Link to="/">Início</Link>,
             },
-            {
+           /* {
               key: "story",
               icon: <HeartOutlined />,
               label: <Link to="/historia">Nossa História</Link>,
@@ -46,7 +46,7 @@ export default function MainLayout() {
               key: "photos",
               icon: <PictureOutlined />,
               label: <Link to="/fotos">Fotos</Link>,
-            },
+            },*/
           ]}
         />
       </Sider>

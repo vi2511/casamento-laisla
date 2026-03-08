@@ -13,10 +13,10 @@ export default function Navbar() {
       }}
     >
       <Link to="/">Início</Link>
-      <Link to="/our-story">Nossa História</Link>
+      {/* <Link to="/our-story">Nossa História</Link>
       <Link to="/wedding-info">Informações</Link>
       <Link to="/gallery">Galeria</Link>
-      <Link to="/rsvp">RSVP</Link>
+      <Link to="/rsvp">RSVP</Link> */}
     </nav>
   );
 }

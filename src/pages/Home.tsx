@@ -41,7 +41,7 @@ export default function Home() {
 
       {/* === NOME DO CASAL === */}
       <h1 className="couple-name">
-        Lincoln & Vinícius
+        Laisla & Alan
       </h1>
 
       {/* === MOLDURA NOVA (Estilo Galeria) === */}
@@ -59,7 +59,7 @@ export default function Home() {
 
       {/* === FRASE ROMÂNTICA === */}
       <p className="romantic-quote">
-        “O amor cresce como as folhas no outono: calmo, bonito e inevitável.”
+        “Cada passo nos trouxe até aqui, e daqui seguimos com amor e juntos para sempre.”
       </p>
 
       {/* === CARD DA CONTAGEM REGRESSIVA === */}
