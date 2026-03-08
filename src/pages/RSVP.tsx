@@ -52,9 +52,6 @@ export default function RSVP() {
         <h1 className="rsvp-title">
           Confirme sua Presença
         </h1>
-        <p className="rsvp-description">
-          Por favor, preencha o formulário abaixo até o dia 4/3/2026.
-        </p>
 
         <Form
           form={form}
