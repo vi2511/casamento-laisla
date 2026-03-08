@@ -42,11 +42,6 @@ export default function MainLayout() {
               icon: <GiftOutlined />,
               label: <Link to="/presentes">Presentes</Link>,
             },
-           /*{
-              key: "photos",
-              icon: <PictureOutlined />,
-              label: <Link to="/fotos">Fotos</Link>,
-            },*/
           ]}
         />
       </Sider>

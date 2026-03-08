@@ -16,7 +16,6 @@ export const router = createBrowserRouter([
       { path: 'historia', element: <OurStory /> },
       { path: 'informacoes', element: <WeddingInfo /> },
       { path: 'rsvp', element: <RSVP /> },
-
       { path: 'presentes', element: <Gifts /> }
     ]
   }

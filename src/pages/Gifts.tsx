@@ -22,92 +22,152 @@ import img15 from "../assets/photos/gifts/e1b34f30-ca25-4def-a5d1-a408a2d888df.j
 import img16 from "../assets/photos/gifts/f713648b-260f-44dd-852e-87a4c8455b2b.jfif";
 
 const giftImages = [
-    { src: img1, caption: "Batedeira - 220v" },
-    { src: img2, caption: "Tanquinho de Lavar Roupas 20kg - 220v" },
-    { src: img3, caption: "Panela Pipoqueira" },
-    { src: img4, caption: "Aspirador de Pó - 220v" },
-    { src: img5, caption: "Puff" },
-    { src: img6, caption: "Jogo de Facas" },
-    { src: img7, caption: "Cutelo" },
-    { src: img8, caption: "Frigideira Wok" },
-    { src: img9, caption: "Multiprocessador - 220v" },
-    { src: img10, caption: "Climatizador - 220v" },
-    { src: img11, caption: "Travessa de Vidro" },
-    { src: img12, caption: "Liquidificador Preto - 220v" },
-    { src: img13, caption: "PlayStation 5" },
-    { src: img14, caption: "Secador de Cabelo - 220v" },
-    { src: img15, caption: "Cafeteira Elétrica - 220v" },
-    { src: img16, caption: "Pote de vidro" }
+  { src: img1, caption: "Batedeira - 220v" },
+  { src: img2, caption: "Tanquinho de Lavar Roupas 20kg - 220v" },
+  { src: img3, caption: "Panela Pipoqueira" },
+  { src: img4, caption: "Aspirador de Pó - 220v" },
+  { src: img5, caption: "Puff" },
+  { src: img6, caption: "Jogo de Facas" },
+  { src: img7, caption: "Cutelo" },
+  { src: img8, caption: "Frigideira Wok" },
+  { src: img9, caption: "Multiprocessador - 220v" },
+  { src: img10, caption: "Climatizador - 220v" },
+  { src: img11, caption: "Travessa de Vidro" },
+  { src: img12, caption: "Liquidificador Preto - 220v" },
+  { src: img13, caption: "PlayStation 5" },
+  { src: img14, caption: "Secador de Cabelo - 220v" },
+  { src: img15, caption: "Cafeteira Elétrica - 220v" },
+  { src: img16, caption: "Pote de vidro" },
 ];
 
 export default function Gifts() {
-    return (
-        <div style={{ minHeight: "100%", padding: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <Card
+  return (
+    <div
+      style={{
+        minHeight: "100%",
+        padding: "20px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Card
+        style={{
+          maxWidth: 600,
+          width: "100%",
+          textAlign: "center",
+          backgroundColor: "var(--card-bg)",
+          borderRadius: "16px",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+        }}
+      >
+        <GiftOutlined
+          style={{
+            fontSize: "48px",
+            color: "var(--accent-color)",
+            marginBottom: "16px",
+          }}
+        />
+
+        <Title
+          level={2}
+          style={{
+            color: "var(--text-primary)",
+            fontFamily: "Arial, Helvetica, sans-serif",
+          }}
+        >
+          Lista de Presentes
+        </Title>
+
+        <Paragraph
+          style={{
+            fontSize: "13px",
+            lineHeight: "1.8",
+            color: "var(--text-secondary)",
+            marginBottom: "32px",
+          }}
+        >
+          A sua presença é o nosso maior presente! <br />
+          A sua presença é o
+          nosso maior presente! Optamos por não fazer uma lista de presentes
+          tradicional, no entanto, caso deseje contribuir com o início de nossa
+          jornada, disponibilizamos o QR Code abaixo e algumas sugestões de
+          presentes. Sinta-se à vontade para nos presentear com o que seu
+          coração deseja!
+        </Paragraph>
+
+        {/* Placeholder for QR Code */}
+        <img
+          src={qrcode}
+          alt="QR Code PIX"
+          style={{
+            width: "100%",
+            maxWidth: "400px",
+            height: "auto",
+            marginBottom: "32px",
+          }}
+        />
+
+        <Title
+          level={3}
+          style={{
+            color: "var(--text-primary)",
+            fontFamily: "Arial, Helvetica, sans-serif",
+            marginTop: "16px",
+            marginBottom: "24px",
+          }}
+        >
+          Algumas Ideias
+        </Title>
+
+        <Carousel
+          autoplay
+          effect="fade"
+          style={{
+            borderRadius: "12px",
+            overflow: "hidden",
+            marginBottom: "16px",
+          }}
+        >
+          {giftImages.map((image, i) => (
+            <div key={i} style={{ position: "relative" }}>
+              <img
+                src={image.src}
+                alt={image.caption}
                 style={{
-                    maxWidth: 600,
-                    width: "100%",
-                    textAlign: "center",
-                    backgroundColor: "var(--card-bg)",
-                    borderRadius: "16px",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                  width: "100%",
+                  height: "500px",
+                  objectFit: "cover",
+                  borderRadius: "12px",
                 }}
-            >
-                <GiftOutlined style={{ fontSize: "48px", color: "var(--accent-color)", marginBottom: "16px" }} />
-
-                <Title level={2} style={{ color: "var(--text-primary)", fontFamily: "Arial, Helvetica, sans-serif" }}>
-                    Lista de Presentes
-                </Title>
-
-                <Paragraph style={{ fontSize: "13px", lineHeight: "1.8", color: "var(--text-secondary)", marginBottom: "32px" }}>
-                    A sua presença é o nosso maior presente! <br />
-                    Optamos por não fazer uma lista de presentes tradicional.
-                    No entanto, caso deseje contribuir com o início da nossa vida a dois,
-                    disponibilizamos um QR Code abaixo. Sinta-se à vontade para nos presentear
-                    com o que o seu coração desejar!
-                </Paragraph>
-
-
-                {/* Placeholder for QR Code */}
-                <img src={qrcode} alt="QR Code PIX" style={{ width: "100%", maxWidth: "400px", height: "auto", marginBottom: "32px" }} />
-
-                <Title level={3} style={{ color: "var(--text-primary)", fontFamily: "Arial, Helvetica, sans-serif", marginTop: "16px", marginBottom: "24px" }}>
-                    Algumas Ideias
-                </Title>
-                
-                <Carousel autoplay effect="fade" style={{ borderRadius: "12px", overflow: "hidden", marginBottom: "16px" }}>
-                    {giftImages.map((image, i) => (
-                        <div key={i} style={{ position: "relative" }}>
-                            <img 
-                                src={image.src} 
-                                alt={image.caption} 
-                                style={{ 
-                                    width: "100%", 
-                                    height: "500px", 
-                                    objectFit: "cover",
-                                    borderRadius: "12px"
-                                }} 
-                            />
-                            <div style={{
-                                position: "absolute",
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                background: "rgba(0,0,0,0.6)",
-                                padding: "12px",
-                                color: "white",
-                                borderBottomLeftRadius: "12px",
-                                borderBottomRightRadius: "12px"
-                            }}>
-                                <Typography.Text style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>
-                                    {image.caption}
-                                </Typography.Text>
-                            </div>
-                        </div>
-                    ))}
-                </Carousel>
-
-            </Card>
-        </div>
-    );
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  background: "rgba(0,0,0,0.6)",
+                  padding: "12px",
+                  color: "white",
+                  borderBottomLeftRadius: "12px",
+                  borderBottomRightRadius: "12px",
+                }}
+              >
+                <Typography.Text
+                  style={{
+                    color: "white",
+                    fontSize: "16px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {image.caption}
+                </Typography.Text>
+              </div>
+            </div>
+          ))}
+        </Carousel>
+      </Card>
+    </div>
+  );
 }
