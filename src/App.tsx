@@ -3,6 +3,7 @@ import {
   HomeOutlined,
   TeamOutlined,
   MenuOutlined,
+  InfoCircleOutlined,
 } from "@ant-design/icons";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -35,13 +36,13 @@ export default function MainLayout() {
       key: "story",
       icon: <HeartOutlined style={{ color: "white" }} />,
       label: <Link style={{ color: "white" }} to="/historia">Nossa História</Link>,
-    },
+    },*/
     {
       key: "info",
       icon: <InfoCircleOutlined style={{ color: "white" }} />,
       label: <Link style={{ color: "white" }} to="/informacoes">Informações</Link>,
     },
-    {
+    /*{
       key: "gifts",
       icon: <GiftOutlined style={{ color: "white" }} />,
       label: <Link style={{ color: "white" }} to="/presentes">Presentes</Link>,
