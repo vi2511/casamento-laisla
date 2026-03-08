@@ -4,6 +4,8 @@ import {
   TeamOutlined,
   MenuOutlined,
   InfoCircleOutlined,
+  GiftOutlined,
+  HeartOutlined,
 } from "@ant-design/icons";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -30,24 +32,40 @@ export default function MainLayout() {
     {
       key: "home",
       icon: <HomeOutlined style={{ color: "white" }} />,
-      label: <Link style={{ color: "white" }} to="/">Início</Link>,
+      label: (
+        <Link style={{ color: "white" }} to="/">
+          Início
+        </Link>
+      ),
     },
-    /*{
+    {
       key: "story",
       icon: <HeartOutlined style={{ color: "white" }} />,
-      label: <Link style={{ color: "white" }} to="/historia">Nossa História</Link>,
-    },*/
+      label: (
+        <Link style={{ color: "white" }} to="/historia">
+          Nossa História
+        </Link>
+      ),
+    },
     {
       key: "info",
       icon: <InfoCircleOutlined style={{ color: "white" }} />,
-      label: <Link style={{ color: "white" }} to="/informacoes">Informações</Link>,
-    },
-    /*{
-      key: "gifts",
-      icon: <GiftOutlined style={{ color: "white" }} />,
-      label: <Link style={{ color: "white" }} to="/presentes">Presentes</Link>,
+      label: (
+        <Link style={{ color: "white" }} to="/informacoes">
+          Informações
+        </Link>
+      ),
     },
     {
+      key: "gifts",
+      icon: <GiftOutlined style={{ color: "white" }} />,
+      label: (
+        <Link style={{ color: "white" }} to="/presentes">
+          Presentes
+        </Link>
+      ),
+    },
+    /*{
       key: "photos",
       icon: <PictureOutlined style={{ color: "white" }} />,
       label: <Link style={{ color: "white" }} to="/fotos">Fotos</Link>,
@@ -55,7 +73,11 @@ export default function MainLayout() {
     {
       key: "rsvp",
       icon: <TeamOutlined style={{ color: "white" }} />,
-      label: <Link style={{ color: "white" }} to="/rsvp">Confirmar Presença</Link>,
+      label: (
+        <Link style={{ color: "white" }} to="/rsvp">
+          Confirmar Presença
+        </Link>
+      ),
     },
   ];
 
@@ -86,12 +108,25 @@ export default function MainLayout() {
       {/* Mobile Drawer */}
       {isMobile && (
         <Drawer
-          title={<span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "24px", color: "var(--text-primary)" }}>Menu</span>}
+          title={
+            <span
+              style={{
+                fontFamily: "'Great Vibes', cursive",
+                fontSize: "24px",
+                color: "var(--text-primary)",
+              }}
+            >
+              Menu
+            </span>
+          }
           placement="left"
           onClose={() => setMobileMenuOpen(false)}
           open={mobileMenuOpen}
           width="100%"
-          styles={{ body: { padding: 0, background: "var(--theme-purple-dark)" }, header: { background: "var(--primary-bg)" } }}
+          styles={{
+            body: { padding: 0, background: "var(--theme-purple-dark)" },
+            header: { background: "var(--primary-bg)" },
+          }}
         >
           <Menu
             theme="dark"
@@ -106,16 +141,23 @@ export default function MainLayout() {
       <Layout style={{ background: "transparent" }}>
         {/* Header with Hamburger Button (only on mobile or when sidebar is collapsed/hidden) */}
         {isMobile && (
-          <Header style={{ padding: 0, background: "var(--primary-bg)", display: 'flex', alignItems: 'center' }}>
+          <Header
+            style={{
+              padding: 0,
+              background: "var(--primary-bg)",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <Button
               type="text"
               icon={<MenuOutlined />}
               onClick={() => setMobileMenuOpen(true)}
               style={{
-                fontSize: '16px',
+                fontSize: "16px",
                 width: 64,
                 height: 64,
-                color: "var(--text-primary)"
+                color: "var(--text-primary)",
               }}
             />
           </Header>

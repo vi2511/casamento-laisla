@@ -1,8 +1,5 @@
 import "../styles/home.css";
-import primeiraImg from "../assets/photos/ourStory/primeira.jfif";
-import tentarImg from "../assets/photos/ourStory/tentar.jfif";
-import pedidoImg from "../assets/photos/ourStory/pedido.jpg";
-import altarImg from "../assets/photos/ourStory/altar.jfif";
+import primeiraImg from "../assets/photos/ourStory/primeira.jpeg";
 
 export default function OurStory() {
   return (
@@ -15,84 +12,27 @@ export default function OurStory() {
           {/* Item 1 */}
           <div className="story-item">
             <div className="story-image-container">
-              <img
-                src={primeiraImg}
-                alt="O Encontro"
-                className="story-image"
-              />
+              <img src={primeiraImg} alt="O Encontro" className="story-image" />
             </div>
             <div className="story-content">
-              <span className="story-date">O primeiro olhar…</span>
+              <span className="story-date">O Primeiro encontro</span>
               <p className="story-text">
-                …aconteceu do jeito mais moderno possível (para a época, né?): através de uma tela do Orkut. Um simples “Olá!” nas comunidades, e dali engatamos con-versa atrás de conversa. Vieram as mensagens de boas festas, o tempo passou — seis meses voando — e finalmente o esperado: “Vamos nos ver?”. Um sorvete com risos tímidos e, sem perceber, começamos a nos ver toda semana. A internet uniu… o sorvete confirmou!
-              </p>
-            </div>
-          </div>
-
-          {/* Item 2 */}
-          <div className="story-item">
-            <div className="story-image-container">
-              <img
-                src={tentarImg}
-                alt="Primeira Viagem"
-                className="story-image"
-              />
-            </div>
-            <div className="story-content">
-              <span className="story-date">Vamos tentar?</span>
-              <p className="story-text">
-                Percebendo que já nos víamos várias vezes por semana - e sempre querendo mais - veio aquela conclusão óbvia: ok, a gente vai namorar mesmo. A partir daí foi um turbilhão bom — viagens, risadas, festas, TCCs, perrengues, alegrias e tudo que vem no pacote. Até que um dia surgiu a frase que mudou o jogo: “Va
-                mos comprar uma casa”.
-              </p>
-            </div>
-          </div>
-
-          {/* Item 3 */}
-          <div className="story-item">
-            <div className="story-image-container">
-              <img
-                src={pedidoImg}
-                alt="O Pedido"
-                className="story-image"
-              />
-            </div>
-            <div className="story-content">
-              <span className="story-date">O pedido</span>
-              <p className="story-text">
-                “Vamos almoçar pra comemorar nosso aniversário.” “E a tua promoção.”
-                <br />
-                Dia calmo. Ensolarado. Tudo perfeito: mesa arrumada, comida chegando, con-versa boa:
-                <br />
-                “Bom demais estar de namoro.”
-                <br />
-                “Casados, né? Moramos juntos.”
-                <br />
-                “Não. Não somos casados ainda.”
-                <br />
-                “Ah, nunca ninguém pediu.”
-                <br />
-                Repentinamente… tcharam! Alianças em mãos, coração acelerado:
-                <br />
-                “Então… casa comigo?”
-                <br />
-                O sorriso abriu mais do que o Sol daquele dia — surpresa, alegria, e o tipo de felicidade que a gente nunca esquece.
-              </p>
-            </div>
-          </div>
-
-          {/* Item 4 */}
-          <div className="story-item">
-            <div className="story-image-container">
-              <img
-                src={altarImg}
-                alt="O Futuro"
-                className="story-image"
-              />
-            </div>
-            <div className="story-content">
-              <span className="story-date">Rumo ao Altar</span>
-              <p className="story-text">
-                Agora na contagem regressiva — e, sinceramente, já surtando um pouquinho de ansiedade e empolgação! Vai ser muito especial celebrar nosso amor com as pessoas que fazem parte da nossa vida de verdade. Mal podemos esperar para viver esse dia incrível e continuar escrevendo essa história com vocês por perto. Porque, né… tudo fica mais divertido quando a gente está bem acompanhado!
+                Aquele convidado inesperado para a festa de aniversário, virou
+                um bate papo que teve início num sábado frio, durante o churras
+                com a galera na saudosa Fazenda Ipanema. No retorno para casa
+                veio a pergunta: “Posso deitar no seu colo?” E dali em diante,
+                os assuntos em comum, as bandas preferidas e o carinho se
+                findaram numa sexta ensolarada, do dia 5 de agosto de 2005, na
+                Praça da Amizade: “E aí, vamos começar nossa história?” :){" "}
+                <br></br>
+                <br></br>
+                20 dias se passaram, ops, 20 anos hehe…e cá continuamos nós,
+                compartilhando de muita história (e bota história nisso), e logo
+                mais, do capítulo mais importante de nossas vidas: receber a
+                benção do matrimônio com todos vocês de testemunhas do nosso
+                amor e de toda vida que temos pela frente! <br></br>
+                <br></br>
+                Obrigada por fazer parte, te esperamos em breve!
               </p>
             </div>
           </div>

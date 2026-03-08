@@ -4,7 +4,7 @@ import { CalendarOutlined, ClockCircleOutlined, EnvironmentOutlined, ShopOutline
 
 export default function WeddingInfo() {
   // Endereço do local do casamento
-  const address = "Av. Independência, 5070 - Éden, Sorocaba";
+  const address = "Av. Independência, 5070 - Éden, Sorocaba - SP, 18103-000";
   const addressChurch = "Rua Padre Antônio Bento, 86 - Éden, Sorocaba - SP, 18103-130";
   const addressEncoded = encodeURIComponent(addressChurch);
 
