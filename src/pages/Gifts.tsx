@@ -12,10 +12,8 @@ import img5 from "../assets/photos/gifts/2e7d0a05-4a3b-4aaf-aaeb-6d98075bb606.jf
 import img6 from "../assets/photos/gifts/3d395074-1854-4e21-8a23-ae1d96e8eb9c.jfif";
 import img7 from "../assets/photos/gifts/5913de23-09c9-46b7-8a1b-c586a937f1d6.jfif";
 import img8 from "../assets/photos/gifts/675210f5-fc80-4290-aaef-37b758ff3d86.jfif";
-import img9 from "../assets/photos/gifts/6fff255f-5823-461c-bba1-eb5d2aea2169.jfif";
 import img10 from "../assets/photos/gifts/a0361ccc-1895-422e-b6dd-6e9217d49fee.jfif";
 import img11 from "../assets/photos/gifts/ad469bc4-0f84-4f0c-b25f-81a74b0f003a.jfif";
-import img12 from "../assets/photos/gifts/af7d8dc3-8acb-4cd2-8a91-871f61eaec90.jfif";
 import img13 from "../assets/photos/gifts/daa87cbc-91d2-4bb6-8dbf-22b8642c8dfb.jfif";
 import img14 from "../assets/photos/gifts/dabd3bea-d062-4b4f-9d19-ddfb967bce60.jfif";
 import img15 from "../assets/photos/gifts/e1b34f30-ca25-4def-a5d1-a408a2d888df.jfif";
@@ -30,10 +28,8 @@ const giftImages = [
   { src: img6, caption: "Jogo de Facas" },
   { src: img7, caption: "Cutelo" },
   { src: img8, caption: "Frigideira Wok" },
-  { src: img9, caption: "Multiprocessador - 220v" },
   { src: img10, caption: "Climatizador - 220v" },
   { src: img11, caption: "Travessa de Vidro" },
-  { src: img12, caption: "Liquidificador Preto - 220v" },
   { src: img13, caption: "PlayStation 5" },
   { src: img14, caption: "Secador de Cabelo - 220v" },
   { src: img15, caption: "Cafeteira Elétrica - 220v" },
