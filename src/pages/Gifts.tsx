@@ -12,6 +12,7 @@ import img5 from "../assets/photos/gifts/2e7d0a05-4a3b-4aaf-aaeb-6d98075bb606.jf
 import img6 from "../assets/photos/gifts/3d395074-1854-4e21-8a23-ae1d96e8eb9c.jfif";
 import img7 from "../assets/photos/gifts/5913de23-09c9-46b7-8a1b-c586a937f1d6.jfif";
 import img8 from "../assets/photos/gifts/675210f5-fc80-4290-aaef-37b758ff3d86.jfif";
+import img9 from "../assets/photos/gifts/furadeira.jpeg";
 import img10 from "../assets/photos/gifts/a0361ccc-1895-422e-b6dd-6e9217d49fee.jfif";
 import img11 from "../assets/photos/gifts/ad469bc4-0f84-4f0c-b25f-81a74b0f003a.jfif";
 import img13 from "../assets/photos/gifts/daa87cbc-91d2-4bb6-8dbf-22b8642c8dfb.jfif";
@@ -28,6 +29,7 @@ const giftImages = [
   { src: img6, caption: "Jogo de Facas" },
   { src: img7, caption: "Cutelo" },
   { src: img8, caption: "Frigideira Wok" },
+  { src: img9, caption: "Furadeira - 220v" },
   { src: img10, caption: "Climatizador - 220v" },
   { src: img11, caption: "Travessa de Vidro" },
   { src: img13, caption: "PlayStation 5" },
@@ -83,8 +85,7 @@ export default function Gifts() {
             marginBottom: "32px",
           }}
         >
-          A sua presença é o nosso maior presente! <br />
-          A sua presença é o
+          A sua presença é o nosso maior presente! <br />A sua presença é o
           nosso maior presente! Optamos por não fazer uma lista de presentes
           tradicional, no entanto, caso deseje contribuir com o início de nossa
           jornada, disponibilizamos o QR Code abaixo e algumas sugestões de
@@ -103,6 +104,20 @@ export default function Gifts() {
             marginBottom: "32px",
           }}
         />
+        <div>
+          <h3 className="info-label"></h3>
+        </div>
+
+        <Paragraph
+          style={{
+            fontSize: "18px",
+            lineHeight: "1.8",
+            color: "var(--text-secondary)",
+            marginBottom: "32px",
+          }}
+        >
+          Chave PIX: 15 99121-7140
+        </Paragraph>
 
         <Title
           level={3}
