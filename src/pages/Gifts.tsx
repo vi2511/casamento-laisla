@@ -5,7 +5,6 @@ import "../styles/home.css";
 const { Title, Paragraph } = Typography;
 import qrcode from "../assets/photos/qrcode.png";
 import img1 from "../assets/photos/gifts/0979ba9b-bd51-4a23-a35d-b23f2e73175a.jfif";
-import img2 from "../assets/photos/gifts/1fbdc211-6cb4-41eb-9803-e1857e597c97.jfif";
 import img3 from "../assets/photos/gifts/2653b348-6b14-468d-a412-01491ac43996.jfif";
 import img4 from "../assets/photos/gifts/28802e69-cc9e-45ae-865d-e637905b745f.jfif";
 import img5 from "../assets/photos/gifts/2e7d0a05-4a3b-4aaf-aaeb-6d98075bb606.jfif";
@@ -17,12 +16,10 @@ import img10 from "../assets/photos/gifts/a0361ccc-1895-422e-b6dd-6e9217d49fee.j
 import img11 from "../assets/photos/gifts/ad469bc4-0f84-4f0c-b25f-81a74b0f003a.jfif";
 import img13 from "../assets/photos/gifts/daa87cbc-91d2-4bb6-8dbf-22b8642c8dfb.jfif";
 import img14 from "../assets/photos/gifts/dabd3bea-d062-4b4f-9d19-ddfb967bce60.jfif";
-import img15 from "../assets/photos/gifts/e1b34f30-ca25-4def-a5d1-a408a2d888df.jfif";
 import img16 from "../assets/photos/gifts/f713648b-260f-44dd-852e-87a4c8455b2b.jfif";
 
 const giftImages = [
   { src: img1, caption: "Batedeira - 220v" },
-  { src: img2, caption: "Tanquinho de Lavar Roupas 20kg - 220v" },
   { src: img3, caption: "Panela Pipoqueira" },
   { src: img4, caption: "Aspirador de Pó - 220v" },
   { src: img5, caption: "Puff" },
@@ -34,7 +31,6 @@ const giftImages = [
   { src: img11, caption: "Travessa de Vidro" },
   { src: img13, caption: "PlayStation 5" },
   { src: img14, caption: "Secador de Cabelo - 220v" },
-  { src: img15, caption: "Cafeteira Elétrica - 220v" },
   { src: img16, caption: "Pote de vidro" },
 ];
 
